@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CentralappService } from 'src/app/centralapp.service';
 
 @Component({
   selector: 'app-lista',
@@ -7,11 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListaComponent implements OnInit {
 
-  constructor() {
-    console.log(document)
+
+  constructor(private central: CentralappService) {
+
   }
 
   ngOnInit(): void {
+ 
   }
 
 

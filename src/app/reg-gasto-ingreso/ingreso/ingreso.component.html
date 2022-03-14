@@ -1,1 +1,48 @@
-<p>ingreso works!</p>
+
+<div class="container">
+  <div class="card my-3">
+    <div class="card-body">
+      <div class="col-4">
+        <h4 style="color:green"> Registro de Ingreso</h4>
+        <form class="">
+
+
+          <div class="form-group has-success w-50 ">
+            <label class="form-label mt-4" for="inputValid">Ingreso</label>
+            <input type="number" value="valor" class="form-control is-valid" id="inputValid" #valorIngreso (keyup)="0" placeholder="$0.00">
+          </div>
+
+          <div class="form-group  my-3 col-6 ">
+
+          <select class="form-select" aria-label="Default select">
+            <option selected>Alimento</option>
+            <option value="1">Entretenimiento</option>
+            <option value="2">Transporte</option>
+            <option value="3">Educacion</option>
+          </select>
+        </div>
+          <div class="form-group  mb-3 w-75 ">
+            <label class="form-label mt-1" for="inputValid">Fecha</label>
+            <input type="datetime-local" value="" class="form-control" id="inputValid" >
+
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Concepto</label>
+            <textarea class="form-control w-40" id="exampleFormControlTextarea1" rows="2"></textarea>
+          </div>
+
+          <button type="button" class="btn btn-success">Agregar</button>
+
+          <button type="button" class="btn btn-warning mx-5">Cancelar</button>
+
+
+
+        </form>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+

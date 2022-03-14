@@ -1,38 +1,30 @@
-
-
-<nav class="navbar navbar-expand-lg navbar-light bg-light ">
+<nav class=" navbar navbar-expand-lg navbar-dark bg-success ">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/"><img src="../assets/img/navmenu.png" width="30" height="30"></a>
+    <a class="navbar-brand" href="/"><img src="../assets/img/cuarto.png" width="30" height="30"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse" id="navbar">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/">Inicio</a>
+          <a class="nav-link active"  href="/">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active " href="#">Consulta</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Presupuesto
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
+          <a class="nav-link active"  href="/presupuesto/ingreso">Ingreso</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active">Documentacion y Agredecimiento</a>
+          <a class="nav-link active " href="/presupuesto/gasto">Gasto</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active " href="/transacciones">Transaciones</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="/">Documentacion y Agredecimiento</a>
         </li>
       </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Buscar.." aria-label="Search">
-        <button class="btn  btn-info " type="submit">Busqueda</button>
-      </form>
+
     </div>
   </div>
 </nav>

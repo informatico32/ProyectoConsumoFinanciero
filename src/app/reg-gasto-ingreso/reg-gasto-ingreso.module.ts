@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { GastoComponent } from './gasto/gasto.component';
 import { IngresoComponent } from './ingreso/ingreso.component';
 import { RouterModule, Routes } from '@angular/router';
+import { ItemTableComponent } from './item-table/item-table.component';
+
 
 const routes: Routes = [
 
@@ -16,8 +18,13 @@ const routes: Routes = [
   }
   ,
   {
+    path:'tabla-ingreso-gasto', component: ItemTableComponent
 
+  },
+  {
+    path: '**', redirectTo: 'tabla-ingreso-gasto'
   }
+
 
 
 
@@ -27,11 +34,16 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     GastoComponent,
-    IngresoComponent
+    IngresoComponent,
+    ItemTableComponent
+
+
+
   ],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+ 
   ]
 })
 export class RegGastoIngresoModule { }
