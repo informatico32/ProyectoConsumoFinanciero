@@ -1,3 +1,22 @@
 table {
   width: 100%;
 }
+
+#fondoini {
+
+  background: #36d1dc;
+  background: -webkit-linear-gradient(to right, #5b86e5, #36d1dc);
+  background: linear-gradient(to right, #5b86e5, #36d1dc);
+/*
+  height: 600px;
+
+
+  */
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  display: block;
+  height: 600px;
+
+
+}

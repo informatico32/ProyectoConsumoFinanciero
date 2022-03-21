@@ -11,7 +11,7 @@ const routes: Routes = [
     path: 'presupuesto', loadChildren: ()=> import('./reg-gasto-ingreso/reg-gasto-ingreso.module').then(m=> m.RegGastoIngresoModule)
   },
   {
-    path: '**', redirectTo :'transacciones'
+    path: '**', redirectTo :'presupuesto'
   }
 
 ];
@@ -20,4 +20,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
+
 export class AppRoutingModule { }

@@ -1,5 +1,5 @@
-export  enum Types {
-  INCOME,
-  OUTCOME
+export  enum Typenun {
+  GASTO="Gasto",
+  INGRESO="Ingreso"
 
 }

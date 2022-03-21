@@ -4,38 +4,70 @@
     <div class="card-body">
       <div class="col-4">
         <h4 style="color: red;"> Registro de Gasto</h4>
-        <form class="">
+        <form [formGroup]="this.presupG.form" >
 
 
-          <div class="form-group has-success w-50 ">
-            <label class="form-label mt-4" for="inputValid">Gasto</label>
-            <input type="number" value="valor" class="form-control is-invalid" id="inputValid" #valorIngreso (keyup)="0" placeholder="$0.00">
+          <div class="form-group  wt-25 ">
+            <label class="form-label mt-4" for="">Gasto</label>
+            <input formControlName="monto" type="number" value="valor" class="form-control w-100" id="inp" #valorIngreso (keyup)="0" placeholder="$0.00"
+
+
+
+            [class.is-invalid]="this.presupG.monto">
+
+
+            <small *ngIf="this.presupG.monto" class="text-danger">
+
+              Debe ingresar un Monto
+            </small>
           </div>
 
           <div class="form-group  my-3 col-6 ">
-            <label class="form-label mt-2" for="inputValid">Cuenta</label>
-          <select class="form-select" aria-label="Default select">
-            <option selected>Alimento</option>
-            <option value="1">Entretenimiento</option>
-            <option value="2">Transporte</option>
-            <option value="3">Educacion</option>
+            <label  class="form-label mt-2" for="inputValid">Cuenta</label>
+          <select formControlName="type" class="form-select"  aria-label="Default select" #cuenta  (keyup)="0"  [class.is-invalid]="this.presupG.type" >
+            <option   *ngFor="let t of types" [value]="t.name">{{t.name}}</option>
+
           </select>
+
+          <small *ngIf="this.presupG.type" class="text-danger">
+            Debe ingresar una cuenta
+          </small>
         </div>
+
+
+
+
+
+
+
+
+
           <div class="form-group  mb-3 w-75 ">
             <label class="form-label mt-1" for="inputValid">Fecha</label>
-            <input type="datetime-local" value="" class="form-control" id="inputValid" >
+            <input formControlName="date"  type="datetime-local" value="" class="form-control" id="inputValid" >
+            <small *ngIf="this.presupG.date" class="text-danger">
+
+              Debe ingresar una Fecha
+            </small>
 
           </div>
 
           <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">Concepto</label>
-            <textarea class="form-control w-40" id="exampleFormControlTextarea1" rows="2"></textarea>
+            <label for="exampleFormControlTextarea1" class="form-label">Concepto Opcional</label>
+            <textarea  class="form-control w-40" id="descripcion" rows="2" formControlName="descripcion"  value="{{cuenta.value}}"></textarea>
           </div>
 
-          <button type="button" class="btn btn-danger">Agregar</button>
+          <div class="btn-group">
 
-          <button type="button" class="btn btn-dark mx-5">Cancelar</button>
+          <button (click)="Guardar()" type="button" class="btn btn-danger">Agregar</button>
 
+          <button (click)="Cancelar()"  type="button" class="btn btn-dark mx-3">Cancelar</button>
+        </div>
 
 
         </form>
+      </div>
+    </div>
+  </div>
+</div>
+

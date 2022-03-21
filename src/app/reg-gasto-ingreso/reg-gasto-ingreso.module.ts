@@ -4,6 +4,8 @@ import { GastoComponent } from './gasto/gasto.component';
 import { IngresoComponent } from './ingreso/ingreso.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ItemTableComponent } from './item-table/item-table.component';
+import { PresupuestoService } from './Service/presupuesto.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 const routes: Routes = [
@@ -43,7 +45,15 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
- 
+    FormsModule,
+    ReactiveFormsModule
+
+
+  ],
+  providers:[
+    PresupuestoService
+
+
   ]
 })
 export class RegGastoIngresoModule { }
