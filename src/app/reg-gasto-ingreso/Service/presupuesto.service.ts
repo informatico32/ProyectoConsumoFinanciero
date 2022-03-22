@@ -1,19 +1,15 @@
-import { getLocaleDateFormat } from '@angular/common';
+
 import { Injectable } from '@angular/core';
 import {  FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { CentralappService } from 'src/app/centralapp.service';
 import { Transaccion } from 'src/app/Models/Transaccion';
 import { Type } from 'src/app/Models/Type';
 import { Typenun } from 'src/app/Models/Typenun';
-
-
-
 @Injectable()
 export class PresupuestoService {
-
   public form : FormGroup;
-  public date2: string = new Date().toLocaleDateString();
 
+  //estableciendo las lista de las categoria de ingreso y Gasto.
   public types: Type[]=[
 
 
@@ -64,6 +60,7 @@ export class PresupuestoService {
 
 
   constructor( private formBu: FormBuilder, private appSv : CentralappService ) {
+    //contruyendo formulario en Angular los parametro del formgroud
   this.form = this.formBu.group({
 
     monto : ['',[Validators.required,Validators.min(200)]],
@@ -77,13 +74,13 @@ export class PresupuestoService {
 
   }
 
-
+//Anadir Transacion recibiendo como parametro el tipo : ingreso o Gasto
   public addTrans(tipo: Typenun){
 
 
 
-    //validar
-    console.log(this.form.valid)
+    //validacion si el formulario es valido
+    console.log(this.form)
 if(this.form.valid){
 
   const tran: Transaccion={
@@ -119,58 +116,7 @@ else if(this.form.invalid) {
   }
 
 
-
-  public addTrans2(tipo: Typenun){
-
-
-
-    //validar
-    console.log(this.form.valid)
-if(this.form.valid){
-
-  const tran: Transaccion={
-    id:this.getId(),
-    monto: this.form.get('monto')?.value,
-    descripcion: this.form.get('descripcion')?.value,
-    date: this.form.get('date')?.value,
-    type:  this.form.get('type')?.value,
-    namet: tipo
-
-
-
-
-  };
-
-  this.appSv.addTransaccion2(tran);
- this.form.reset();
-
-}
-else if(this.form.invalid) {
-
-
-    return Object.values(this.form.controls).forEach(control=>{
-      control.markAllAsTouched();
-
-
-    });
-
-
-
-}
-
-  }
-
-
-
-
-
-
-
-
-
-
-
-
+  //metodo para cancelar la Transacion
   cancelar(){
 
     let conf : Boolean = confirm("Esta Seguro Que Desea Abandonar")
@@ -185,15 +131,17 @@ else if(this.form.invalid) {
 
 
   }
+
+  //filtar Por Tipo
   public getTypes(type: Typenun) : Type[] {
     return this.types.filter(t=> t.type === type)
   }
-
+//Conseguir id automatico Randon
   private getId(): string {
     return Math.random().toString().substr(2);
   }
 
-
+//campo para Realizar Validacion
   get monto() {
     return this.form.get("monto")?.invalid && this.form.get('monto')?.touched
   }
@@ -209,11 +157,6 @@ else if(this.form.invalid) {
   get descripcion() {
     return this.form.get("descripcion")
   }
-
-
-
-
-
 
 
 }

@@ -9,7 +9,7 @@ import { CentralappService } from 'src/app/centralapp.service';
   styleUrls: ['./lista.component.css']
 })
 export class ListaComponent implements OnInit {
-
+  filterPost='';
   constructor(public appSv: CentralappService) {
 
   }
@@ -17,7 +17,7 @@ export class ListaComponent implements OnInit {
   ngOnInit(): void {
 
     console.log(this.appSv.getTransaccion());
-    console.log(this.appSv.getTransaccion2());//ingreso
+  //  console.log(this.appSv.getTransaccion2());//ingreso
 
 
 

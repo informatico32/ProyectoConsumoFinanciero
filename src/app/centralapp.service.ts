@@ -9,40 +9,20 @@ import { Transaccion } from './Models/Transaccion';
 export class CentralappService {
 
 
-
-
-  public trasanciones: Transaccion[]= [];
-  public trasanciones2: Transaccion[]= [];
-
-
+  private trasancciones: Transaccion[]= [];
 
   constructor() { }
 
-
-
-
   public addTransaccion(tran: Transaccion){
 
-  this.trasanciones.push(tran);
+  this.trasancciones.push(tran);
 
-  this.setLocal(this.trasanciones);
+  this.setLocal(this.trasancciones);
 
   }
 
-
-
-  public addTransaccion2(tran: Transaccion){
-
-    this.trasanciones2.push(tran);
-
-    this.setLocal2(this.trasanciones2);
-
-    }
-
-
   public getTransaccion(){
 
-   //return this.trasanciones;
 
     return this.getLocal();
 
@@ -50,32 +30,14 @@ export class CentralappService {
   }
 
 
-  public getTransaccion2(){
-
-    //return this.trasanciones;
-
-     return this.getLocal2();
-
-
-   }
-
-
-
   private setLocal(trasanciones: Transaccion[]) {
-      localStorage.setItem('trasanciones', JSON.stringify(trasanciones));
+      localStorage.setItem('trasancciones', JSON.stringify(trasanciones));
   }
-
-
- private setLocal2(trasanciones2: Transaccion[]) {
-    localStorage.setItem('transacciones2', JSON.stringify(trasanciones2));
-}
-
-
 
 
   private getLocal(): Transaccion[] {
 
-    const trans = localStorage.getItem("trasanciones")
+    const trans = localStorage.getItem("trasancciones")
     if (trans) {
       return JSON.parse(trans) as Transaccion[];
     } else {
@@ -88,27 +50,9 @@ export class CentralappService {
 
   }
 
-
-
-  private getLocal2(): Transaccion[] {
-
-    const trans = localStorage.getItem("transacciones2")
-    if (trans) {
-      return JSON.parse(trans) as Transaccion[];
-    } else {
-      this.setLocal2([])
-
-      return [];
-    }
-
+  public myFunctionFiltro(){
 
   }
-
-  public myFunction(){
-
-
-  }
-
 
 
 }

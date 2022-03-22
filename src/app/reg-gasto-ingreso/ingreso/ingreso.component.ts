@@ -24,7 +24,7 @@ export class IngresoComponent implements OnInit {
   }
 
   Guardar(){
-    this.presuING.addTrans2(Typenun.INGRESO);
+    this.presuING.addTrans(Typenun.INGRESO);
   }
   Cancelar(){
     this.presuING.cancelar()

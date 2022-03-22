@@ -3,7 +3,7 @@ import { Typenun } from "./Typenun"
 
 export interface Type
 {
-name : string
+name : string,
 type: Typenun
 
 }

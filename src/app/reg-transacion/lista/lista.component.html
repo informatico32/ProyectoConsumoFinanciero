@@ -4,65 +4,12 @@
     <div class="card-body">
 
 <div class="col">
-  
 
-  <input type="text"  class="form-control" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
-
+  <input type="text" class="form-control"id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
 </div>
 
 <p> Transaciones de Los Ultimo Tres Meses </p>
 <h2>Ingreso</h2>
-
-<table class="table table-striped">
-  <thead>
-  <tr>
-    <th scope="col">#</th>
-    <th scope="col">Monto</th>
-    <th scope="col">Cuenta </th>
-    <th scope="col"> Fecha</th>
-    <th scope="col">Tipo </th>
-    <th scope="col"> Descripcion</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let tran of this.appSv.getTransaccion2()  index as i">
-    <th scope="row">{{ i + 1 }}</th>
-    <td >
-     <!--bandera-->{{ tran.monto | currency:'$'}}
-    </td>
-    <td>{{ tran.type }}</td>
-    <td>  {{ tran.date | date: 'd/M/yy, h:mm a'}}</td>
-    <td>{{ tran.namet }}</td>
-    <td>  {{ tran.descripcion }}</td>
-  </tr>
-  </tbody>
-</table>
-
-
-</div>
-</div>
-</div>
-
-
-
-
-
-
-
-
-<div class="container">
-  <div class="col">
-    <div class="card">
-      <div class="card-body">
-
-
-
-
-
-
-
-<p> Transaciones de Los Ultimo Tres Meses </p>
-<h2>Gasto</h2>
 
 <table class="table table-striped">
   <thead>
@@ -90,10 +37,6 @@
 </table>
 
 
-
-      </div>
-    </div>
-  </div>
-
-
+</div>
+</div>
 </div>
