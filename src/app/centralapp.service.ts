@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { Totales } from './Models/Totales';
+
 import { Transaccion } from './Models/Transaccion';
 
 
@@ -59,6 +61,53 @@ export class CentralappService {
 
 
   }
+
+  public datoAgrupado(){
+
+
+
+    var transacion =this.getTransaccion();
+
+    let montoi: number=0;
+    let montog: number=0;let arrd: Totales[]=[];
+
+    let arrdd: Totales[]=[];
+
+    for (let k = 0; k < transacion.length; k++) {
+      const element = transacion[k].namet;
+
+      if(element==="Ingreso"){
+
+
+      montoi=montoi+ transacion[k].monto ;
+
+
+      }
+      else if(element==="Gasto"){
+      montog= montog+ transacion[k].monto ;
+
+      }
+
+     arrd=[{ 
+      totalG:montog,
+      totali:montoi
+    }
+    ]
+
+
+    }
+
+
+    return arrd;
+
+  }
+
+
+
+
+
+
+
 
 
 }

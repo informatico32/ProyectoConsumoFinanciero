@@ -17,8 +17,10 @@ export class ListaComponent implements OnInit {
   ngOnInit(): void {
 
     console.log(this.appSv.getTransaccion());
+    console.log(this.appSv.datoAgrupado());
+   
 
- 
+
 
 
   }

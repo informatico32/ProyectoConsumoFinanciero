@@ -40,6 +40,10 @@
     <td>  {{ tran.descripcion }}</td>
   </tr>
   </tbody>
+
+
+
+
 </table>
 
 </div>
@@ -50,12 +54,48 @@
 </div>
 </div>
 
-<div class="col">
-  <div class="card">
+<!-- <div class="col"> -->
+  <div class="card col-6 my-2">
     <div class="card-body">
-      <h1></h1>
+
+      <div class="card-title"><h2><p> Transaciones de Gasto e Ingreso Totales </p></h2></div>
+
+
+      <table class="table table-hover">
+        <thead>
+        <tr class="table-info">
+          <th scope="col">#</th>
+          <th scope="col">Gasto Totales</th>
+          <th scope="col">Ingreso Totales</th>
+
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="table-success" *ngFor="let trand of this.appSv.datoAgrupado() index as i">
+          <th scope="row">{{  i + 1 }}</th>
+          <td >
+           <!--bandera-->{{ trand.totalG | currency:'$'}}
+          </td>
+          <td >
+            <!--bandera-->{{ trand.totali | currency:'$'}}
+           </td>
+
+
+
+
+        </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
-</div>
+
+
+
+
+
+
+
+<!-- </div> -->
 
