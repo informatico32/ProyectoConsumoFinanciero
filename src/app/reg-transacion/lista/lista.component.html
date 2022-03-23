@@ -6,12 +6,14 @@
       <div class="card-title"><h2><p> Transaciones de Los Ultimo Tres Meses </p></h2></div>
 
 
-      <div class="form-group  my-3 col-6 ">
-        <label  class="form-label mt-2" for="inputValid">Filtrar Por: </label>
-      <select  class="form-select"  aria-label="Default select">
-        <option></option>
+      <div  class="form-group  my-3 col-6 ">
+        <label   class="form-label mt-2" for="inputValid">Buscar Por: Tipo : Ingreso o Gasto  , Monto , Cuenta</label>
 
-      </select>
+        <input  type="text" class="form-control" [(ngModel)]="termino">
+     <!-- <select  class="form-select"  aria-label="Default select"> -->
+        <!-- <option></option> -->
+
+      <!-- </select> -->
 
 
 
@@ -27,8 +29,8 @@
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let tran of this.appSv.getTransaccion()  index as i">
-    <th scope="row">{{ i + 1 }}</th>
+  <tr *ngFor="let tran of this.appSv.getTransaccion() | filter:termino">
+    <th scope="row">{{  + 1 }}</th>
     <td >
      <!--bandera-->{{ tran.monto | currency:'$'}}
     </td>

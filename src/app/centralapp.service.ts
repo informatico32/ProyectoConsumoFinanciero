@@ -50,7 +50,13 @@ export class CentralappService {
 
   }
 
-  public myFunctionFiltro(){
+  public myFunctionFiltro(termino: string){
+
+
+    return termino;
+
+
+
 
   }
 

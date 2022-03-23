@@ -18,13 +18,14 @@ export class ListaComponent implements OnInit {
 
     console.log(this.appSv.getTransaccion());
 
-
+ 
 
 
   }
 
 
 
+public termino: string='';
 
 
 }
