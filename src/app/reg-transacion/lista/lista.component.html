@@ -7,9 +7,9 @@
 
 
       <div  class="form-group  my-3 col-6 ">
-        <label   class="form-label mt-2" for="inputValid">Buscar Por: Tipo : Ingreso o Gasto  , Monto , Cuenta</label>
+        <label   class="form-label mt-2" for="inputValid"></label>
 
-        <input  type="text" class="form-control" [(ngModel)]="termino">
+        <input  type="text" class="form-control" [(ngModel)]="termino" placeholder="Buscar Por: Tipo : Ingreso o Gasto  , Monto , Cuenta">
      <!-- <select  class="form-select"  aria-label="Default select"> -->
         <!-- <option></option> -->
 
@@ -29,8 +29,8 @@
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let tran of this.appSv.getTransaccion() | filter:termino">
-    <th scope="row">{{  + 1 }}</th>
+  <tr *ngFor="let tran of datotable  | filter:termino; index as i; ">
+    <th scope="row">{{ i  + 1 }}</th>
     <td >
      <!--bandera-->{{ tran.monto | currency:'$'}}
     </td>
