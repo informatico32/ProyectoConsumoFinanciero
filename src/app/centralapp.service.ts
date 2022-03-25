@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Persona } from './Models/Persona';
 import { Totales } from './Models/Totales';
 
 import { Transaccion } from './Models/Transaccion';
@@ -12,6 +13,17 @@ export class CentralappService {
 
 
   private trasancciones: Transaccion[]= [];
+
+  private persona: Persona[]=[
+
+    {
+      id:0, name: "Daili", Apellido:"De Los Santos", Profesion:'Ingeniero', email:"informatico32@gmail.com", socialnetwork:"elbonitillo22",Descripcion:"Junior Desarrollar Frond-end"
+
+    }
+  ];
+
+
+
 
   constructor() { }
 
@@ -88,7 +100,7 @@ export class CentralappService {
 
       }
 
-     arrd=[{ 
+     arrd=[{
       totalG:montog,
       totali:montoi
     }
@@ -106,7 +118,10 @@ export class CentralappService {
 
 
 
+public getPersona(){
 
+  return this.persona;
+}
 
 
 

@@ -8,7 +8,7 @@ import { Typenun } from 'src/app/Models/Typenun';
 @Injectable()
 export class PresupuestoService {
   public form : FormGroup;
-
+  public comp = new Date()
   //estableciendo las lista de las categoria de ingreso y Gasto.
   public types: Type[]=[
 
@@ -68,6 +68,7 @@ export class PresupuestoService {
     descripcion:[''],
     type: ['',Validators.required],
     namet: ['']
+
 
 
   });
@@ -157,6 +158,7 @@ else if(this.form.invalid) {
   get descripcion() {
     return this.form.get("descripcion")
   }
+
 
 
 }

@@ -10,6 +10,11 @@ const routes: Routes = [
   {
     path: 'presupuesto', loadChildren: ()=> import('./reg-gasto-ingreso/reg-gasto-ingreso.module').then(m=> m.RegGastoIngresoModule)
   },
+
+
+  {
+    path: 'agradecer', loadChildren: ()=> import('./agradecimiento/agradecimiento.module').then(m=> m.AgradecimientoModule)
+  },
   {
     path: '**', redirectTo :'presupuesto'
   }

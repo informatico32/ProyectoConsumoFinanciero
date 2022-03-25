@@ -4,6 +4,7 @@ import { Transaccion } from 'src/app/Models/Transaccion';
 
 
 
+
 @Component({
   selector: 'app-lista',
   templateUrl: './lista.component.html',
@@ -13,14 +14,33 @@ export class ListaComponent implements OnInit {
 
   public datotable: Transaccion[]=this.appSv.getTransaccion();
   filterPost='';
+  public comp = new Date()
+
+
+
+
   constructor(public appSv: CentralappService) {
 
   }
 
   ngOnInit(): void {
 
-    console.log(this.appSv.getTransaccion());
-    console.log(this.appSv.datoAgrupado());
+
+
+    console.log(this.comp.toLocaleDateString());
+
+
+
+
+
+
+
+  }
+
+  bucarfecha(){
+
+
+
 
 
 
@@ -30,7 +50,6 @@ export class ListaComponent implements OnInit {
 
 
 
-public termino: string='';
-
+public termino: string="";
 
 }

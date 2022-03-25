@@ -9,11 +9,10 @@
       <div  class="form-group  my-3 col-6 ">
         <label   class="form-label mt-2" for="inputValid"></label>
 
-        <input  type="text" class="form-control" [(ngModel)]="termino" placeholder="Buscar Por: Tipo : Ingreso o Gasto  , Monto , Cuenta">
-     <!-- <select  class="form-select"  aria-label="Default select"> -->
-        <!-- <option></option> -->
+        <input  type="text" class="form-control my-auto" [(ngModel)]="termino" placeholder="Buscar Por: Tipo : Ingreso o Gasto  , Monto , Cuenta"><hr>
 
-      <!-- </select> -->
+
+
 
 
 
@@ -35,7 +34,7 @@
      <!--bandera-->{{ tran.monto | currency:'$'}}
     </td>
     <td>{{ tran.type }}</td>
-    <td>  {{ tran.date | date: 'd/M/yy, h:mm a'}}</td>
+    <td>  {{ tran.date | date: 'dd-MM-yyyy'}}</td>
     <td>{{ tran.namet }}</td>
     <td>  {{ tran.descripcion }}</td>
   </tr>
