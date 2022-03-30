@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ProyectoConsumoFinanciero';
- 
 
-
+public iscollapsed=false;
+public isMenuCollapsed = true;
 }

@@ -2,14 +2,14 @@
 <div class="container">
   <div class="card my-3">
     <div class="card-body">
-      <div class="col-4">
+      <div class="col">
         <h4 style="color: red;"> Registro de Gasto</h4>
         <form [formGroup]="this.presupG.form" >
 
 
           <div class="form-group  wt-25 ">
             <label class="form-label mt-4" for="">Gasto</label>
-            <input formControlName="monto" type="number" value="valor" class="form-control w-100" id="inp" #valorIngreso (keyup)="0" placeholder="$0.00"
+            <input formControlName="monto" type="number" value="valor" class="form-control w-auto" id="inp" #valorIngreso (keyup)="0" placeholder="$0.00"
 
 
 
@@ -24,7 +24,7 @@
 
           <div class="form-group  my-3 col-6 ">
             <label  class="form-label mt-2" for="inputValid">Cuenta</label>
-          <select formControlName="type" class="form-select"  aria-label="Default select" #cuenta  (keyup)="0"  [class.is-invalid]="this.presupG.type" >
+          <select formControlName="type" class="form-select w-auto"  aria-label="Default select" #cuenta  (keyup)="0"  [class.is-invalid]="this.presupG.type" >
             <option   *ngFor="let t of types" [value]="t.name">{{t.name}}</option>
 
           </select>
@@ -44,7 +44,7 @@
 
           <div class="form-group  mb-3 w-75 ">
             <label class="form-label mt-1" for="inputValid">Fecha</label>
-            <input formControlName="date"  type="date" value="" class="form-control" id="inputValid" >
+            <input formControlName="date"  type="date" value="" class="form-control w-auto" id="inputValid" >
             <small *ngIf="this.presupG.date" class="text-danger">
 
               Debe ingresar una Fecha
@@ -54,7 +54,7 @@
 
           <div class="mb-3">
             <label for="exampleFormControlTextarea1" class="form-label">Concepto Opcional</label>
-            <textarea  class="form-control w-40" id="descripcion" rows="2" formControlName="descripcion"  value="{{cuenta.value}}"></textarea>
+            <textarea  class="form-control w-auto" id="descripcion" rows="2" formControlName="descripcion"  value="{{cuenta.value}}"></textarea>
           </div>
 
           <div class="btn-group">
